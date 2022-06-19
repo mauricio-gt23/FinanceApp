@@ -1,24 +1,33 @@
-<form class="form-login" autocomplete="off">
-    <h2>FINANCE APP</h2>
-    <h3>Iniciar Sesión</h3>
-    <!-- Campo correo -->
-    <div>
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="email@hotmail.com"/>
-        </mat-form-field>
-    </div>
-    <!-- Campo contraseña -->
-    <div>
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="password"/>
-        </mat-form-field>
-    </div>
-    <div>
-        <button mat-button color="primary" type="submit" (click)="iniciar()">Iniciar sesión</button>
-    </div>
-    <div>
-        <button mat-button type="submit" color="primary" (click)="registrarme()">Registrarme</button>
-    </div>
+<div class="contenedor">
+    <form class="form-login" autocomplete="off" #miFormulario="ngForm">
+        <h2>FINANCE APP</h2>
+        <h3>Iniciar Sesión</h3>
+        <!-- Campo correo -->
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Correo</mat-label>
+                <input ngModel matInput type="email" name="correo" [(ngModel)]="initForm.correo"/>
+            </mat-form-field>
+        </div>
+        <!-- Campo contraseña -->
+        <div class="field">
+            <mat-form-field>
+                <mat-label>Contraseña</mat-label>
+                <input ngModel matInput name="contraseña" [(ngModel)]="initForm.contra"/>
+                <button mat-icon-button matSuffix (click)="toggleShow()">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <span *ngIf="showMessage" class="alert">Correo o contraseña invalidos</span>
+        </div>
+        <div>
+            <button mat-button class="button" color="primary" type="submit" (click)="iniciar()">Iniciar sesión</button>
+        </div>
+        <div>
+            <button mat-button class="button" type="submit" color="primary" (click)="registrarme()">Registrarme</button>
+        </div>
+    </form>
+</div>
 
-
-</form>

@@ -1,1 +1,46 @@
-<p>registro works!</p>
+<div class="contenedor ">
+    <form autocomplete="off" class="form-registro">
+        <h2>FINANCE APP</h2>
+        <h3>Registro</h3>
+        <div class="grid">
+            <!-- Campo Nombre -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <!-- Campo Apellido -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Apellido</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <!-- Campo DNI -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Dni</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <!-- Campo Correo -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Correo</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <!-- Campo Contraseña -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <button mat-button class="button" type="submit" color="primary" (click)="registrar()">Registrarme</button>
+        </div>
+    </form>
+</div>

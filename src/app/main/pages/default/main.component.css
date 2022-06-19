@@ -1,0 +1,27 @@
+nav {
+    background-color: rgb(255, 195, 77);
+}
+
+.title {
+    font-family: 'Patua One', cursive;
+    font-size: 23px;
+}
+
+a {
+    color: black;
+}
+
+.fondo {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/foto-gratis/fondo-textura-lona-papel-blanco-diseno-fondo-o-diseno-superposicion_1962-68.jpg?w=900');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.it {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-left: 2px;
+    margin-right: 2px;
+}

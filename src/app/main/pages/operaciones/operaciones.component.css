@@ -1,0 +1,48 @@
+.contenedor {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 600px;
+    background-color: white;
+    box-shadow: 1px 1px 20px #000;
+}
+
+ h3 {
+    color: black;
+    font-family: 'Crete Round', serif;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.flex {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 250px;
+    height: 150px;
+}
+
+.titulo {
+    margin-bottom: 12px;
+    font-family: 'Alatsi', sans-serif;
+    font-size: 30px;
+    color: rgb(255, 195, 77);
+}
+
+span {
+    font-size: 120px;
+}
+
+button {
+    border: none;
+}
