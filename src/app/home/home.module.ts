@@ -4,7 +4,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { MaterialModule } from '../material/material.module';
 import { HomeRoutingModule } from './home-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -17,7 +19,10 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     MaterialModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

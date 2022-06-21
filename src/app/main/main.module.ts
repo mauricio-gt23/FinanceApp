@@ -7,6 +7,7 @@ import { BonoComponent } from './pages/bono/bono.component';
 import { OperacionesComponent } from './pages/operaciones/operaciones.component';
 import { HistorialComponent } from './pages/historial/historial.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
   imports: [
     CommonModule,
     MainRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }

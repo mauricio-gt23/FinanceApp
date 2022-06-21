@@ -1,5 +1,5 @@
 <div class="contenedor ">
-    <form autocomplete="off" class="form-registro">
+    <form (ngSubmit)="registrar()" autocomplete="off" class="form-registro" [formGroup]="miFormulario">
         <h2>FINANCE APP</h2>
         <h3>Registro</h3>
         <div class="grid">
@@ -7,40 +7,46 @@
             <div class="field">
                 <mat-form-field>
                     <mat-label>Nombre</mat-label>
-                    <input matInput type="text">
+                    <input formControlName="nombre" matInput type="text" required>
                 </mat-form-field>
             </div>
             <!-- Campo Apellido -->
             <div class="field">
                 <mat-form-field>
                     <mat-label>Apellido</mat-label>
-                    <input matInput type="text">
+                    <input formControlName="apellido" matInput type="text" required  >
                 </mat-form-field>
             </div>
             <!-- Campo DNI -->
             <div class="field">
                 <mat-form-field>
                     <mat-label>Dni</mat-label>
-                    <input matInput type="text">
+                    <input formControlName="dni" matInput type="text" required >
                 </mat-form-field>
             </div>
             <!-- Campo Correo -->
             <div class="field">
                 <mat-form-field>
                     <mat-label>Correo</mat-label>
-                    <input matInput type="text">
+                    <input  formControlName="correo" matInput type="correo" required  >
                 </mat-form-field>
             </div>
             <!-- Campo Contraseña -->
             <div class="field">
                 <mat-form-field>
                     <mat-label>Contraseña</mat-label>
-                    <input matInput type="text">
+                    <input  formControlName="contrasena" matInput type="text" required [type]="hide ? 'password' : 'text'">
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
                 </mat-form-field>
             </div>
         </div>
+        <div class="space">
+            <span *ngIf="showMessage" class="alert">Faltan campos requeridos (*)</span>
+        </div>
         <div>
-            <button mat-button class="button" type="submit" color="primary" (click)="registrar()">Registrarme</button>
+            <button mat-button class="button" type="submit" color="primary">Registrarme</button>
         </div>
     </form>
 </div>

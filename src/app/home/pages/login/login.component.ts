@@ -1,6 +1,8 @@
 import { Component, ContentChild, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Usuario } from '../../interfaces/usuario.interface';
+import { HomeService } from '../../services/home.service';
 
 @Component({
     selector: 'app-login',
@@ -9,18 +11,21 @@ import { Router } from '@angular/router';
   })
   export class LoginComponent {
   
-    showPassword: boolean = false;
+    hide = true;
     showMessage: boolean = false;
+    usuarioId: string = '';
+    usuarios: Usuario[] = [];
+
     @ViewChild('miFormulario') miFormulario!: NgForm;
     initForm = {
       correo: '',
       contra: ''
     }
 
-    constructor( private router: Router) { }
-  
-    toggleShow() {
-      this.showPassword = !this.showPassword;
+    constructor( private router: Router, private homeService: HomeService) {
+      this.homeService.login().subscribe( data => {
+        this.usuarios = data.data;
+      });
     }
 
     valido(): boolean {
@@ -30,7 +35,12 @@ import { Router } from '@angular/router';
 
     iniciar(): void {
       if (this.valido()) {
-        this.router.navigate(['./main']);
+        if (this.filtro(this.initForm.correo, this.initForm.contra)) {
+          localStorage.setItem('usuarioId', this.usuarioId);
+          this.router.navigate(['./main']);
+        } else {
+          this.showMessage = true;
+        }
       } else {
         this.showMessage = true;
       }
@@ -38,6 +48,15 @@ import { Router } from '@angular/router';
 
     registrarme(): void {
       this.router.navigate(['auth/signup']);
+    }
+
+    filtro(correo: string, contrasena: string): boolean {
+      for (let i = 0; i < this.usuarios.length; i++) {
+        if (this.usuarios[i].correo === correo && this.usuarios[i].contrasena === contrasena) {
+          this.usuarioId = this.usuarios[i].id!.toString();
+          return true;
+        }
+      } return false;
     }
 
   }

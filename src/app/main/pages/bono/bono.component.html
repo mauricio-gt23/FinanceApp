@@ -1,1 +1,191 @@
-<h2>Holaaaaa!!!</h2>
+<div>
+    <form (ngSubmit)="registrarBono()" class="form-bono" autocomplete="off" [formGroup]="miFormulario">
+        <h3>Bono</h3>
+        <div class="grid">
+            <!-- Valor Nominal -->
+            <div class="vn">
+                <mat-form-field class="mff">
+                    <mat-label >Valor nominal</mat-label>
+                    <input matInput formControlName="valornominal" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>attach_money</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- Valor Comercial -->
+            <div class="vc">
+                <mat-form-field class="mff">
+                    <mat-label>Valor comercial</mat-label>
+                    <input matInput formControlName="valorcomercial" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>attach_money</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- CARD -->
+            <div class="third">
+                <mat-card>
+                    <mat-tab-group>
+                        <mat-tab label="Efectiva" >
+                            <!-- Tasa de Interes -->
+                            <div class="field mrg-l">
+                                <mat-form-field>
+                                    <mat-label for="tasainteres">Tasa Interes</mat-label>
+                                    <input matInput formControlName="tasainteres" type="number" />
+                                    <button type="button" mat-icon-button matSuffix>
+                                        <mat-icon>percent</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <!-- Frecuencia -->
+                            <div class="field mrg-l">
+                                <mat-form-field>
+                                    <mat-label for="frecuencia">Frecuencia del Cupón</mat-label>
+                                    <mat-select [formControl]="frecuenciaControl" name="frecuencia">
+                                        <mat-option *ngFor="let frecuencia of frecuencias" [value]="frecuencia.value">{{ frecuencia.viewValue }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Nominal">
+                            <!-- Porcentaje -->
+                            <div class="field mrg-l">
+                                <mat-form-field>
+                                    <mat-label for="tasainteres">Tasa Interes</mat-label>
+                                    <input matInput formControlName="tasainteres" type="number" />
+                                    <button type="button" mat-icon-button matSuffix>
+                                        <mat-icon>percent</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <!-- Frecuencia -->
+                            <div class="field mrg-l">
+                                <mat-form-field>
+                                    <mat-label for="frecuencia">Frecuencia del Cupón</mat-label>
+                                    <mat-select [formControl]="frecuenciaControl" name="frecuencia">
+                                        <mat-option *ngFor="let frecuencia of frecuencias" [value]="frecuencia.value">{{ frecuencia.viewValue }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>                            
+                            <!-- Capitalizacion -->
+                            <div class="field mrg-l">
+                                <mat-form-field>
+                                    <mat-label for="capitalizacion">Capitalizacion</mat-label>
+                                    <mat-select [formControl]="capitalizacionControl" name="capitalizacion">
+                                        <mat-option *ngFor="let capitalizacion of capitalizaciones" [value]="capitalizacion.value">{{ capitalizacion.viewValue}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card>
+            </div>
+            <!-- Fecha emision -->
+            <div class="fe">
+                <div class="field mrg-r">
+                    <mat-form-field>
+                        <mat-label>Fecha de Emision</mat-label>
+                        <input matInput formControlName="fechaemision" type="date"/>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- Numero de años -->
+            <div class="na">
+                <div class="field mrg-r">
+                    <mat-form-field>
+                        <mat-label>Numero de años</mat-label>
+                        <input matInput formControlName="numeroanos" type="text"/>
+                        <button type="button" mat-icon-button matSuffix>
+                            <mat-icon>schedule</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- Dias Año -->
+            <div class="field mrg-r">
+                <mat-form-field>
+                    <mat-label for="diasaño">Dias x Año</mat-label>
+                    <mat-select [formControl]="diasanioControl" name="diasaño">
+                        <mat-option *ngFor="let dianio of diasanio" [value]="dianio.value">{{ dianio.viewValue}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- Tasa anual de Descuento -->
+            <div class="field mrg-r">
+                <mat-form-field>
+                    <mat-label>Tasa anual de Descuento</mat-label>
+                    <input matInput formControlName="tasaanual" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div >
+            <!-- Impuesto a la Renta -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Impuesto a la renta</mat-label>
+                    <input matInput formControlName="impuesto" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- % Prima -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Prima</mat-label>
+                    <input matInput formControlName="prima" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- % Estructuracion -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Estructuracion</mat-label>
+                    <input matInput formControlName="estructuracion" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- % Colocacion -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Colocacion</mat-label>
+                    <input matInput formControlName="colocacion" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- % Flotacion -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Flotacion</mat-label>
+                    <input matInput formControlName="flotacion" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <!-- % Cavali -->
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Cavali</mat-label>
+                    <input matInput formControlName="cavali" type="number"/>
+                    <button type="button" mat-icon-button matSuffix>
+                        <mat-icon>percent</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="space">
+            <span *ngIf="showMessage" class="alert">Faltan campos requeridos (*)</span>
+        </div>
+        <div>
+            <button class="button" mat-button type="submit" color="primary">Registrar Bono</button>
+        </div>
+    </form>
+</div>
