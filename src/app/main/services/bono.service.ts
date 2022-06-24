@@ -12,6 +12,14 @@ export class BonoService {
     
     constructor( private http: HttpClient ) { }
 
+    obtenerBonos(): Observable<any> {
+        return this.http.get<any>(`${this.baseUrl}/bono`);
+    }
+
+    obtenerBonoPorId( id: any ): Observable<any> {
+        return this.http.get<any>(`${this.baseUrl}/bono/${id}`)    
+    }
+
     agregarBono( bono: Bono ): Observable<any> {
         return this.http.post<any>(`${this.baseUrl}/bono/create`, bono);
     }

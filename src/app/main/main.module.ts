@@ -8,6 +8,7 @@ import { OperacionesComponent } from './pages/operaciones/operaciones.component'
 import { HistorialComponent } from './pages/historial/historial.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DetalleComponent } from './pages/detalle/detalle.component';
 
 
 
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BonoComponent,
     OperacionesComponent,
     HistorialComponent,
-    PerfilComponent
+    PerfilComponent,
+    DetalleComponent
   ],
   imports: [
     CommonModule,

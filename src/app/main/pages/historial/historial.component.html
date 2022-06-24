@@ -1,1 +1,23 @@
-<h2>HISTORIAL!!!!!</h2>
+<div id="container">
+    <h3>Lista de Bonos Registrados</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Valor nominal (S/.)</th>
+                <th>Fecha de emisión</th>
+                <th>Número de años</th>
+                <th>Tasa de Interes (%)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bono of bonoFiltrado">
+                <td>{{ bono.valorNominal | number }}</td>
+                <td>{{ bono.fechaEmision | date : 'dd/MM/yy': 'GMT+5:00'}}</td>
+                <td>{{ bono.numAnos}}</td>
+                <td>{{ bono.tasaInteres }}</td>
+                <td><a (click)="visualizar(bono.id)"><mat-icon aria-hidden="false">search</mat-icon></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

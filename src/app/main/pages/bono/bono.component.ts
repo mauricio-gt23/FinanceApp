@@ -119,6 +119,8 @@ interface DiaAnio {
     }
 
   asignarValores(): void {
+    let fechaString = this.miFormulario.controls['fechaemision'].value;
+    let fechaDate = new Date(fechaString);
     if (this.miFormulario.controls['capitalizacion'].value !== 0) {
       this.bono = {
         valorNominal:  this.miFormulario.controls['valornominal'].value,
@@ -131,7 +133,7 @@ interface DiaAnio {
         tasaInteres: this.miFormulario.controls['tasainteres'].value,
         tasaAnualDescuento: this.miFormulario.controls['tasaanual'].value,
         impuestoRenta: this.miFormulario.controls['impuesto'].value,
-        fechaEmision: this.miFormulario.controls['fechaemision'].value,
+        fechaEmision: fechaDate.toUTCString(),
         porcentajePrima: this.miFormulario.controls['prima'].value,
         porcentajeEstructuracion: this.miFormulario.controls['estructuracion'].value,
         porcentajeColocacion: this.miFormulario.controls['colocacion'].value,
@@ -151,7 +153,7 @@ interface DiaAnio {
         tasaInteres: this.miFormulario.controls['tasainteres'].value,
         tasaAnualDescuento: this.miFormulario.controls['tasaanual'].value,
         impuestoRenta: this.miFormulario.controls['impuesto'].value,
-        fechaEmision: this.miFormulario.controls['fechaemision'].value,
+        fechaEmision: fechaDate.toUTCString(),
         porcentajePrima: this.miFormulario.controls['prima'].value,
         porcentajeEstructuracion: this.miFormulario.controls['estructuracion'].value,
         porcentajeColocacion: this.miFormulario.controls['colocacion'].value,

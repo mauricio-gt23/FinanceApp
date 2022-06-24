@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BonoComponent } from './pages/bono/bono.component';
 import { MainComponent } from './pages/default/main.component';
+import { DetalleComponent } from './pages/detalle/detalle.component';
 import { HistorialComponent } from './pages/historial/historial.component';
 import { OperacionesComponent } from './pages/operaciones/operaciones.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
             {
                 path: 'perfil',
                 component: PerfilComponent
+            },
+            {
+                path: 'detalle/:id',
+                component: DetalleComponent
             }
         ]
     }
