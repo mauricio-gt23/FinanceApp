@@ -1,148 +1,152 @@
 <div>
-    <h2>Detalle del Bono</h2>
+    <h2>Detalles del Bono</h2>
     <!-- Info bono -->
-    <h3>Información del Bono</h3>
-    <div class="container-grid">
-        <div>
-            <label for="valornominal">Valor nominal:</label>
-            <br/>
-            <input name="valornominal" id="valornominal" [value]="bono.valorNominal | number" disabled />
-        </div>
-        <div>
-            <label for="valorcomercial">Valor nominal:</label>
-            <br/>
-            <input name="valorcomercial" id="valorcomercial" [value]="bono.valorComercial | number" disabled />
-        </div>
-        <div>
-            <label for="numanos">Valor nominal:</label>
-            <br/>
-            <input name="numanos" id="numanos" [value]="bono.numAnos | number" disabled />
-        </div>
-        <div>
-            <label for="fechaemision">Fecha Emisión:</label>
-            <br/>
-            <input name="fechaemision" id="fechaemision" [value]="bono.fechaEmision | date : 'dd/MM/yy': 'GMT+5:00'" disabled />
-        </div>
-        <div>
-            <label for="frecuenciacup">Frecuencia Cupón:</label>
-            <br/>
-            <input name="frecuenciacup" id="frecuenciacup" [value]="frecuencia" disabled />
-        </div>
-        <div>
-            <label for="tipotasa">Tipo tasa Interés:</label>
-            <br/>
-            <input name="tipotasa" id="fechaemision" [value]="tipoTasaInteres" disabled />
-        </div>
-        <div *ngIf="bono.tipoTasaInteres === 1">
-            <label for="capitalizacion">Capitalizacion:</label>
-            <br/>
-            <input name="capitalizacion" id="capitalizacion" [value]="capitalizacion" disabled />
-        </div>
-        <div>
-            <label for="tasa">Tasa Interés:</label>
-            <br/>
-            <input name="tasa" id="tasa" [value]="bono.tasaInteres" disabled />
-        </div>
-        <div>
-            <label for="tasaanual">Tasa Anual de Descuento:</label>
-            <br/>
-            <input name="tasaanual" id="tasaanual" [value]="bono.tasaAnualDescuento" disabled />
-        </div>
-        <div>
-            <label for="impuesto">Impuesto a la Renta:</label>
-            <br/>
-            <input name="impuesto" id="impuesto" [value]="bono.impuestoRenta" disabled />
+    <div class="mrg-l">
+        <h3>Información del Bono</h3>
+        <div class="container-grid">
+            <div>
+                <label for="valornominal">Valor nominal:</label>
+                <br/>
+                <input name="valornominal" id="valornominal" [value]="bono.valorNominal | number" disabled />
+            </div>
+            <div>
+                <label for="valorcomercial">Valor nominal:</label>
+                <br/>
+                <input name="valorcomercial" id="valorcomercial" [value]="bono.valorComercial | number" disabled />
+            </div>
+            <div>
+                <label for="numanos">Valor nominal:</label>
+                <br/>
+                <input name="numanos" id="numanos" [value]="bono.numAnos | number" disabled />
+            </div>
+            <div>
+                <label for="fechaemision">Fecha Emisión:</label>
+                <br/>
+                <input name="fechaemision" id="fechaemision" [value]="bono.fechaEmision | date : 'dd/MM/yy': 'GMT+5:00'" disabled />
+            </div>
+            <div>
+                <label for="frecuenciacup">Frecuencia Cupón:</label>
+                <br/>
+                <input name="frecuenciacup" id="frecuenciacup" [value]="frecuencia" disabled />
+            </div>
+            <div>
+                <label for="tipotasa">Tipo Tasa Interés:</label>
+                <br/>
+                <input name="tipotasa" id="fechaemision" [value]="tipoTasaInteres" disabled />
+            </div>
+            <div *ngIf="bono.tipoTasaInteres === 1">
+                <label for="capitalizacion">Capitalización:</label>
+                <br/>
+                <input name="capitalizacion" id="capitalizacion" [value]="capitalizacion" disabled />
+            </div>
+            <div>
+                <label for="tasa">Tasa Interés:</label>
+                <br/>
+                <input name="tasa" id="tasa" [value]="bono.tasaInteres" disabled />
+            </div>
+            <div>
+                <label for="tasaanual">Tasa Anual de Descuento:</label>
+                <br/>
+                <input name="tasaanual" id="tasaanual" [value]="bono.tasaAnualDescuento" disabled />
+            </div>
+            <div>
+                <label for="impuesto">Impuesto a la Renta:</label>
+                <br/>
+                <input name="impuesto" id="impuesto" [value]="bono.impuestoRenta" disabled />
+            </div>
         </div>
     </div>
     <!-- RESULTADOS -->
-    <h3>Resultados</h3>
-    <div class="container-grid">
-        <div>
-            <label for="frecuencia">Frecuencia Cupon Días:</label>
-            <br/>
-            <input name="frecuencia" id="frecuencia" [value]="resultado.frecuenciaCupon" disabled />
+    <div class="mrg-l">
+        <h3>Resultados</h3>
+        <div class="container-grid">
+            <div>
+                <label for="frecuencia">Frecuencia Cupón Días:</label>
+                <br/>
+                <input name="frecuencia" id="frecuencia" [value]="resultado.frecuenciaCupon" disabled />
+            </div>
+            <div>
+                <label for="dias">Días Capitalización:</label>
+                <br/>
+                <input name="dias" id="dias" [value]="resultado.diasCapitalizacion" disabled />
+            </div>
+            <div>
+                <label for="periodos">N° períodos por año:</label>
+                <br/>
+                <input name="periodos" id="periodos" [value]="resultado.numeroPeriodosAno" disabled />
+            </div>
+            <div>
+                <label for="tasaanual">Tasa Efectiva Anual: </label>
+                <br/>
+                <input name="tasaanual" id="tasaanual" [value]="resultado.tasaEfectivaAnual | number: '0.2-2' " disabled />
+            </div>
+            <div>
+                <label for="tasaperiodo">Tasa Efectiva {{ frecuencia }}: </label>
+                <br/>
+                <input name="tasaperiodo" id="tasaperiodo" [value]="resultado.tasaEfectivaPeriodo | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="cok">COK {{ frecuencia }}:</label>
+                <br/>
+                <input name="cok" id="cok" [value]="resultado.cok | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="costesinicialesemisor">Costes Iniciales Emisor: </label>
+                <br/>
+                <input name="costesinicialesemisor" id="costesinicialesemisor" [value]="resultado.costesInicialesEmisor | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="costesinicialesbonista">Costes Iniciales Bonista: </label>
+                <br/>
+                <input name="costesinicialesbonista" id="costesinicialesbonista" [value]="resultado.costesInicialesBonista | number: '0.2-2'" disabled />
+            </div>
+            <!-- TODO: CALCULAR LOS INPUTS RESULTADO -->
+            <div>
+                <label for="costesinicialesbonista">Precio Actual: </label>
+                <br/>
+                <input name="costesinicialesbonista" id="costesinicialesbonista" [value]="resultadoCuadro.precioActual | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="utilidadperdida">Utilidad/Pérdida: </label>
+                <br/>
+                <input name="utilidadperdida" id="utilidadperdida" [value]="resultadoCuadro.utilidadPerdida | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="duracion">Duración: </label>
+                <br/>
+                <input name="duracion" id="duracion" [value]="resultadoCuadro.duracion | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="convexidad">Convexidad: </label>
+                <br/>
+                <input name="convexidad" id="convexidad" [value]="resultadoCuadro.convexidad | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="total">Total (Duración+Convexidad): </label>
+                <br/>
+                <input name="total" id="total" [value]="resultadoCuadro.total | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="duracion">Duración modificada: </label>
+                <br/>
+                <input name="duracion" id="duracion" [value]="resultadoCuadro.duracionModificada | number: '0.2-2'" disabled />
+            </div>
+            <div>
+                <label for="duracion">TCEA Emisor: </label>
+                <br/>
+                <input name="duracion" id="duracion" [value]="resultadoCuadro.tceaEmisor | number: '0.4-4'" disabled />
+            </div>
+            <div>
+                <label for="duracion">TCEA Emisor c/Escudo: </label>
+                <br/>
+                <input name="duracion" id="duracion" [value]="resultadoCuadro.tceaEmisorEscudo | number: '0.4-4'" disabled />
+            </div>
+            <div>
+                <label for="duracion">TREA Bonista: </label>
+                <br/>
+                <input name="duracion" id="duracion" [value]="resultadoCuadro.treaBonista | number: '0.4-4'" disabled />
+            </div>
         </div>
-        <div>
-            <label for="dias">Dias Capitalizacion:</label>
-            <br/>
-            <input name="dias" id="dias" [value]="resultado.diasCapitalizacion" disabled />
-        </div>
-        <div>
-            <label for="periodos">N° perídos por año:</label>
-            <br/>
-            <input name="periodos" id="periodos" [value]="resultado.numeroPeriodosAno" disabled />
-        </div>
-        <div>
-            <label for="tasaanual">Tasa Efectiva Anual: </label>
-            <br/>
-            <input name="tasaanual" id="tasaanual" [value]="resultado.tasaEfectivaAnual | number: '0.2-2' " disabled />
-        </div>
-        <div>
-            <label for="tasaperiodo">Tasa Efectiva {{ frecuencia }}: </label>
-            <br/>
-            <input name="tasaperiodo" id="tasaperiodo" [value]="resultado.tasaEfectivaPeriodo | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="cok">COK {{ frecuencia }}:</label>
-            <br/>
-            <input name="cok" id="cok" [value]="resultado.cok | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="costesinicialesemisor">Costes Iniciales Emisor: </label>
-            <br/>
-            <input name="costesinicialesemisor" id="costesinicialesemisor" [value]="resultado.costesInicialesEmisor | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="costesinicialesbonista">Costes Iniciales Bonista: </label>
-            <br/>
-            <input name="costesinicialesbonista" id="costesinicialesbonista" [value]="resultado.costesInicialesBonista | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="costesinicialesbonista">Precio Actual: </label>
-            <br/>
-            <input name="costesinicialesbonista" id="costesinicialesbonista" [value]="resultadoCuadro.precioActual | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="utilidadperdida">Utilidad/Pérdida: </label>
-            <br/>
-            <input name="utilidadperdida" id="utilidadperdida" [value]="resultadoCuadro.utilidadPerdida | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="duracion">Duración: </label>
-            <br/>
-            <input name="duracion" id="duracion" [value]="resultadoCuadro.duracion | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="convexidad">Convexidad: </label>
-            <br/>
-            <input name="convexidad" id="convexidad" [value]="resultadoCuadro.convexidad | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="total">Total (Duración+Convexidad): </label>
-            <br/>
-            <input name="total" id="total" [value]="resultadoCuadro.total | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="duracion">Duracion modificada: </label>
-            <br/>
-            <input name="duracion" id="duracion" [value]="resultadoCuadro.duracionModificada | number: '0.2-2'" disabled />
-        </div>
-        <div>
-            <label for="duracion">TCEA Emisor: </label>
-            <br/>
-            <input name="duracion" id="duracion" [value]="resultadoCuadro.tceaEmisor | number: '0.4-4'" disabled />
-        </div>
-        <div>
-            <label for="duracion">TCEA Emisor c/Escudo: </label>
-            <br/>
-            <input name="duracion" id="duracion" [value]="resultadoCuadro.tceaEmisorEscudo | number: '0.4-4'" disabled />
-        </div>
-        <div>
-            <label for="duracion">TREA Bonista: </label>
-            <br/>
-            <input name="duracion" id="duracion" [value]="resultadoCuadro.treaBonista | number: '0.4-4'" disabled />
-        </div>
-        <!-- TODO: CALCULAR LOS INPUTS RESULTADO -->
     </div>
     <!-- TABLA ESTADO FLUJO-->
     <div>

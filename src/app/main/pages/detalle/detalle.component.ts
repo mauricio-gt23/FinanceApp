@@ -273,7 +273,6 @@ export class DetalleComponent {
           aux = aux + this.bonosFecha[i].flujoEmisor!/((1 + tir/100) ** i)
         }
       } while (aux > 0);
-      console.log(tir)
       return tir;
     }
 

@@ -1,1 +1,28 @@
-<h2>Perfill!!!</h2>
+<div class="contenedor">
+    <div class="div-icon"><mat-icon class="icon">person</mat-icon></div>
+        <form (ngSubmit)="guardar()" autocomplete="off" #miFormulario="ngForm">
+            <div class="contenedor-grid">
+                <div class="field">
+                    <input ngModel name="nombre" [(ngModel)]="usuario.nombre" type="text" placeholder="Nombre" [disabled]="disabled" required/>
+                </div>
+                <div>
+                    <input ngModel name="apellido" [(ngModel)]="usuario.apellido" type="text" name="apellido" placeholder="Apellido" [disabled]="disabled" required/>
+                </div>
+                <div>
+                    <input ngModel name="correo" [(ngModel)]="usuario.correo" [value]="usuario.correo" type="email" name="correo" placeholder="Correo" [disabled]="disabled" required/>
+                </div>
+                <div>
+                    <input ngModel name="dni" [(ngModel)]="usuario.dni" [value]="usuario.dni" type="number" name="dni" placeholder="Dni" [disabled]="disabled" required/>
+                </div>
+            </div>
+            <div class="space">
+                <span *ngIf="showMensaje" class="alert">Todos los campos son requeridos</span>
+            </div>
+            <div>
+                <button type="button" (click)="editar()" *ngIf="showEditar">Editar</button>
+            </div>
+            <div>
+                <button type="submit" *ngIf="showGuardar">Guardar Cambios</button>
+            </div>
+        </form>
+</div>

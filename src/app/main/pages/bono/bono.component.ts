@@ -76,7 +76,7 @@ interface DiaAnio {
       {value: 365, viewValue: '365'},
     ];
 
-    frecuenciaControl = new FormControl(this.frecuencias[1].value);
+    frecuenciaControl = new FormControl(this.frecuencias[0].value);
     capitalizacionControl = new FormControl(this.capitalizaciones[0].value);
     diasanioControl = new FormControl(this.diasanio[0].value);
 

@@ -28,4 +28,9 @@ export class MainComponent implements OnInit {
       return true;
     }
   }
+
+  logout(): void {
+    localStorage.clear();
+    this.route.navigate(['auth/signin']);
+  }
 }

@@ -4,5 +4,5 @@ export interface Usuario {
     apellido: string;
     dni: string;
     correo: string;
-    contrasena: string;
+    contrasena?: string;
 }
