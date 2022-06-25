@@ -23,4 +23,8 @@ export class BonoService {
     agregarBono( bono: Bono ): Observable<any> {
         return this.http.post<any>(`${this.baseUrl}/bono/create`, bono);
     }
+
+    eliminarBono( id: any ): Observable<any> {
+        return this.http.delete<any>(`${this.baseUrl}/bono/delete?id=${id}`);
+    }
 }
