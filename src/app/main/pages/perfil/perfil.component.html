@@ -12,7 +12,7 @@
                     <input ngModel name="correo" [(ngModel)]="usuario.correo" [value]="usuario.correo" type="email" name="correo" placeholder="Correo" [disabled]="disabled" required/>
                 </div>
                 <div>
-                    <input ngModel name="dni" [(ngModel)]="usuario.dni" [value]="usuario.dni" type="number" name="dni" placeholder="Dni" [disabled]="disabled" required/>
+                    <input ngModel name="dni" [(ngModel)]="usuario.dni" [value]="usuario.dni" type="tel" name="dni" placeholder="Dni" [disabled]="disabled" required maxlength="8"/>
                 </div>
             </div>
             <div class="space">

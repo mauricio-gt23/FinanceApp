@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { max } from 'rxjs';
 import { Usuario } from 'src/app/home/interfaces/usuario.interface';
 import { PerfilService } from '../../services/perfil.service';
 
@@ -58,7 +59,6 @@ export class PerfilComponent {
         })
       });
     }
-
 
   }
 
