@@ -105,7 +105,7 @@ export class DetalleComponent {
           this.bonoFecha.fechaProgramada = fechaDate.toString();
           this.bonoFecha.flujoEmisor = this.bono.valorComercial - this.resultado.costesInicialesEmisor;
           this.bonoFecha.flujoEmisorEscudo = this.bonoFecha.flujoEmisor;
-          this.bonoFecha.flujoBonista = (this.bono.valorComercial + this.resultado.costesInicialesBonista); 
+          this.bonoFecha.flujoBonista = this.bono.valorComercial + this.resultado.costesInicialesBonista; 
           this.bonosFecha.push(this.bonoFecha);
         } else {
           // Fecha
@@ -132,7 +132,7 @@ export class DetalleComponent {
           this.bonoFecha.amortizacion = this.bonoFecha.cuota - this.bonoFecha.cupon;
           // Prima
           if (i === this.resultado.numeroTotalPeriodos) {
-            this.bonoFecha.prima = (this.bono.porcentajePrima/100) * this.bonoFecha.bonoIndexado;
+            this.bonoFecha.prima = (this.bono.porcentajePrima/100) * this.bono.valorNominal;
           } else {
             this.bonoFecha.prima = 0;
           }
@@ -173,7 +173,7 @@ export class DetalleComponent {
     calcularResultadoCuadro(): void {
       // Precio Actual
       let res = 0;
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= this.resultado.numeroTotalPeriodos; i++) {
         res = res + this.bonosFecha[i].flujoBonista! / ((1 + (this.resultado.cok/100)) ** i);
       }
       this.resultadoCuadro.precioActual = res;

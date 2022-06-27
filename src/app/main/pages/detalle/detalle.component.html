@@ -10,12 +10,12 @@
                 <input name="valornominal" id="valornominal" [value]="bono.valorNominal | number" disabled />
             </div>
             <div>
-                <label for="valorcomercial">Valor nominal:</label>
+                <label for="valorcomercial">Valor comercial:</label>
                 <br/>
                 <input name="valorcomercial" id="valorcomercial" [value]="bono.valorComercial | number" disabled />
             </div>
             <div>
-                <label for="numanos">Valor nominal:</label>
+                <label for="numanos">Número de años:</label>
                 <br/>
                 <input name="numanos" id="numanos" [value]="bono.numAnos | number" disabled />
             </div>
@@ -42,17 +42,17 @@
             <div>
                 <label for="tasa">Tasa Interés:</label>
                 <br/>
-                <input name="tasa" id="tasa" [value]="bono.tasaInteres" disabled />
+                <input name="tasa" id="tasa" [value]="bono.tasaInteres | number" disabled />
             </div>
             <div>
                 <label for="tasaanual">Tasa Anual de Descuento:</label>
                 <br/>
-                <input name="tasaanual" id="tasaanual" [value]="bono.tasaAnualDescuento" disabled />
+                <input name="tasaanual" id="tasaanual" [value]="bono.tasaAnualDescuento | number" disabled />
             </div>
             <div>
                 <label for="impuesto">Impuesto a la Renta:</label>
                 <br/>
-                <input name="impuesto" id="impuesto" [value]="bono.impuestoRenta" disabled />
+                <input name="impuesto" id="impuesto" [value]="bono.impuestoRenta | number" disabled />
             </div>
         </div>
     </div>
@@ -78,17 +78,17 @@
             <div>
                 <label for="tasaanual">Tasa Efectiva Anual: </label>
                 <br/>
-                <input name="tasaanual" id="tasaanual" [value]="resultado.tasaEfectivaAnual | number: '0.2-2' " disabled />
+                <input name="tasaanual" id="tasaanual" [value]="resultado.tasaEfectivaAnual | number: '0.4-4' " disabled />
             </div>
             <div>
                 <label for="tasaperiodo">Tasa Efectiva {{ frecuencia }}: </label>
                 <br/>
-                <input name="tasaperiodo" id="tasaperiodo" [value]="resultado.tasaEfectivaPeriodo | number: '0.2-2'" disabled />
+                <input name="tasaperiodo" id="tasaperiodo" [value]="resultado.tasaEfectivaPeriodo | number: '0.4-4'" disabled />
             </div>
             <div>
                 <label for="cok">COK {{ frecuencia }}:</label>
                 <br/>
-                <input name="cok" id="cok" [value]="resultado.cok | number: '0.2-2'" disabled />
+                <input name="cok" id="cok" [value]="resultado.cok | number: '0.4-4'" disabled />
             </div>
             <div>
                 <label for="costesinicialesemisor">Costes Iniciales Emisor: </label>
@@ -157,7 +157,7 @@
                     <th>Fecha Programada</th>
                     <th>Bono</th>
                     <th>Bono Indexado</th>
-                    <th>Cupon</th>
+                    <th>Cupón</th>
                     <th>Cuota</th>
                     <th>Amortizacion</th>
                     <th>Prima</th>
